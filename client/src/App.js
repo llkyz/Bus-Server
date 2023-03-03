@@ -41,25 +41,37 @@ function App() {
     const res = await fetch("api/data", {
       method: "GET",
     });
-    let result = await res.json();
-    setClientData(result);
+    if (res.ok) {
+      let result = await res.json();
+      setClientData(result);
+    } else {
+      console.log(`Error, ${res.status}`);
+    }
   }
 
   async function adminGet() {
     const res = await fetch("api/admin", {
       method: "GET",
     });
-    let result = await res.json();
-    setData(result);
+    if (res.ok) {
+      let result = await res.json();
+      setData(result);
+    } else {
+      console.log(`Error, ${res.status}`);
+    }
   }
 
   async function adminUpdate() {
     const res = await fetch("api/admin", {
       method: "POST",
     });
-    let result = await res.json();
-    alert("Bus data updated");
-    setData(result);
+    if (res.ok) {
+      let result = await res.json();
+      alert("Bus data updated");
+      setData(result);
+    } else {
+      console.log(`Error, ${res.status}`);
+    }
   }
 
   return (

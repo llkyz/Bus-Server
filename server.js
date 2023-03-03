@@ -200,12 +200,6 @@ async function getBusRoutes(stop) {
         [routeList[0].Direction]: [
           {
             BusStopCode: routeList[0].BusStopCode,
-            WD_FirstBus: routeList[0].WD_FirstBus,
-            WD_LastBus: routeList[0].WD_LastBus,
-            SAT_FirstBus: routeList[0].SAT_FirstBus,
-            SAT_LastBus: routeList[0].SAT_LastBus,
-            SUN_FirstBus: routeList[0].SUN_FirstBus,
-            SUN_LastBus: routeList[0].SUN_LastBus,
             RoadName: stop[routeList[0].BusStopCode].RoadName,
             Description: stop[routeList[0].BusStopCode].Description,
             Latitude: stop[routeList[0].BusStopCode].Latitude,
@@ -219,12 +213,6 @@ async function getBusRoutes(stop) {
       sortedRoutes[routeList[0].ServiceNo][routeList[0].Direction] = [
         {
           BusStopCode: routeList[0].BusStopCode,
-          WD_FirstBus: routeList[0].WD_FirstBus,
-          WD_LastBus: routeList[0].WD_LastBus,
-          SAT_FirstBus: routeList[0].SAT_FirstBus,
-          SAT_LastBus: routeList[0].SAT_LastBus,
-          SUN_FirstBus: routeList[0].SUN_FirstBus,
-          SUN_LastBus: routeList[0].SUN_LastBus,
           RoadName: stop[routeList[0].BusStopCode].RoadName,
           Description: stop[routeList[0].BusStopCode].Description,
           Latitude: stop[routeList[0].BusStopCode].Latitude,
@@ -234,12 +222,6 @@ async function getBusRoutes(stop) {
     } else {
       sortedRoutes[routeList[0].ServiceNo][routeList[0].Direction].push({
         BusStopCode: routeList[0].BusStopCode,
-        WD_FirstBus: routeList[0].WD_FirstBus,
-        WD_LastBus: routeList[0].WD_LastBus,
-        SAT_FirstBus: routeList[0].SAT_FirstBus,
-        SAT_LastBus: routeList[0].SAT_LastBus,
-        SUN_FirstBus: routeList[0].SUN_FirstBus,
-        SUN_LastBus: routeList[0].SUN_LastBus,
         RoadName: stop[routeList[0].BusStopCode].RoadName,
         Description: stop[routeList[0].BusStopCode].Description,
         Latitude: stop[routeList[0].BusStopCode].Latitude,

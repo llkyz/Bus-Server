@@ -197,36 +197,18 @@ async function getBusRoutes(stop) {
   while (routeList.length > 0) {
     if (sortedRoutes[routeList[0].ServiceNo] === undefined) {
       sortedRoutes[routeList[0].ServiceNo] = {
-        [routeList[0].Direction]: [
-          {
-            BusStopCode: routeList[0].BusStopCode,
-            RoadName: stop[routeList[0].BusStopCode].RoadName,
-            Description: stop[routeList[0].BusStopCode].Description,
-            Latitude: stop[routeList[0].BusStopCode].Latitude,
-            Longitude: stop[routeList[0].BusStopCode].Longitude,
-          },
-        ],
+        [routeList[0].Direction]: [routeList[0].BusStopCode],
       };
     } else if (
       sortedRoutes[routeList[0].ServiceNo][routeList[0].Direction] === undefined
     ) {
       sortedRoutes[routeList[0].ServiceNo][routeList[0].Direction] = [
-        {
-          BusStopCode: routeList[0].BusStopCode,
-          RoadName: stop[routeList[0].BusStopCode].RoadName,
-          Description: stop[routeList[0].BusStopCode].Description,
-          Latitude: stop[routeList[0].BusStopCode].Latitude,
-          Longitude: stop[routeList[0].BusStopCode].Longitude,
-        },
+        routeList[0].BusStopCode,
       ];
     } else {
-      sortedRoutes[routeList[0].ServiceNo][routeList[0].Direction].push({
-        BusStopCode: routeList[0].BusStopCode,
-        RoadName: stop[routeList[0].BusStopCode].RoadName,
-        Description: stop[routeList[0].BusStopCode].Description,
-        Latitude: stop[routeList[0].BusStopCode].Latitude,
-        Longitude: stop[routeList[0].BusStopCode].Longitude,
-      });
+      sortedRoutes[routeList[0].ServiceNo][routeList[0].Direction].push(
+        routeList[0].BusStopCode
+      );
     }
     if (
       !stop[routeList[0].BusStopCode].Buses.includes(routeList[0].ServiceNo)

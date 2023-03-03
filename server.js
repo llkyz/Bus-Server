@@ -30,9 +30,13 @@ app.use(
   })
 );
 
+// app.get("/api/data", async function (req, res) {
+//   let result = await Bus.findOne({ order: 0 });
+//   res.status(200).json(result);
+// });
+
 app.get("/api/data", async function (req, res) {
-  let result = await Bus.findOne({ order: 0 });
-  res.status(200).json(result);
+  res.status(200).json("TEST");
 });
 
 app.get("/api/admin", async function (req, res) {

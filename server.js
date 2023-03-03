@@ -32,7 +32,7 @@ app.use(
 
 app.get("/api/data", async function (req, res) {
   let result = await Bus.findOne({ order: 0 });
-  console.log(result);
+  console.log("Buses:", result.bus.length);
   res.status(200).json(result);
 });
 

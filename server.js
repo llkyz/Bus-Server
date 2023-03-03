@@ -129,7 +129,15 @@ async function getBusData() {
       x++;
     }
   }
-  return busList;
+  let croppedList = [];
+  for (let y = 0; y < busList.length; y++) {
+    croppedList.push({
+      ServiceNo: busList[y].ServiceNo,
+      Operator: busList[y].Operator,
+      Category: busList[y].Category,
+    });
+  }
+  return croppedList;
 }
 
 async function getstop() {

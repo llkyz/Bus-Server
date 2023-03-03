@@ -31,7 +31,7 @@ app.use(
 );
 
 app.get("/api/data", async function (req, res) {
-  let result = await Bus.findOne({ order: 0 });
+  let result = await Bus.findOne({ order: 0 }, { _id: 0, order: 0 });
   console.log("Buses:", result.bus.length);
   console.log("Stops:", Object.keys(result.stop).length);
   console.log("Routes:", Object.keys(result.route).length);

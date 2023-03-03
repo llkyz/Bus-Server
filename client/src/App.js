@@ -38,7 +38,7 @@ function App() {
   }
 
   async function clientGet() {
-    const res = await fetch("/api/data", {
+    const res = await fetch("api/data", {
       method: "GET",
     });
     let result = await res.json();
@@ -46,7 +46,7 @@ function App() {
   }
 
   async function adminGet() {
-    const res = await fetch("/api/admin", {
+    const res = await fetch("api/admin", {
       method: "GET",
     });
     let result = await res.json();
@@ -54,7 +54,7 @@ function App() {
   }
 
   async function adminUpdate() {
-    const res = await fetch("/api/admin", {
+    const res = await fetch("api/admin", {
       method: "POST",
     });
     let result = await res.json();

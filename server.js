@@ -13,6 +13,7 @@ let mongoURI = process.env.DATABASE;
 mongoose.set("strictQuery", true);
 mongoose.set("runValidators", true);
 mongoose.set("debug", true);
+console.log(`connecting to ${mongoURI}`);
 mongoose.connect(mongoURI);
 db.on("open", () => console.log("MongoDB connection established"));
 

@@ -63,10 +63,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose.connection.once("open", () => {
-  app.listen(
-    process.env.PORT,
-    console.log(`Listening to port ${process.env.PORT}...`)
-  );
+  app.listen(5000, console.log(`Listening to port 5000...`));
 });
 
 async function getBusData() {
